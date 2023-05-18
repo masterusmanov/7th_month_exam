@@ -31,7 +31,7 @@ export const DashboardLinks = [
     },
     {
         id: 7,
-        title: "suhbat",
+        title: "Suhbat",
         link: "/chat",
         icon: "bx bx-chat"
     },

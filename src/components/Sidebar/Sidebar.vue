@@ -13,18 +13,18 @@
         </div> -->
 
         <div class="list mt-10">
-            <a href="/" id="links" class="ml-14 rounded-l-full list__item font-bold p-4 block my-2 text-yellow-500 hover:bg-white hover:text-balck duration-100">
-              <i class="bx bx-home ml-5"></i> <span class="ms-3 font-bold">Dashboard</span>
+            <a href="/" id="links" class="ml-2 text-2xl rounded-l-full list__item font-bold p-4 block my-2 text-yellow-500 hover:bg-white hover:text-balck duration-100">
+              <i class="bx bx-home ml-5 text-2xl"></i> <span class="ms-3 font-bold">Dashboard</span>
             </a>
             <router-link
-              class=" ml-14 rounded-l-full font-bold p-4 block my-2 text-white hover:bg-white hover:text-black duration-100"
+              class=" ml-2 rounded-l-full text-lg font-bold p-4 block my-2 text-white hover:bg-white hover:text-black duration-100"
               v-for="el in DashboardLinks" :key="el.id"
               :to="el.link"
             >
-              <i :class="el.icon" class="ml-5"></i> <span class="ms-3">{{ el.title }}</span>
+              <i :class="el.icon" class="ml-5 text-2xl"></i> <span class="ms-3">{{ el.title }}</span>
             </router-link>
           </div>
-            <div class="mt-20 ml-20 rounded-l-full font-bold p-4 block my-2 text-white hover:bg-white hover:text-black duration-100">
+            <div class="mt-20 ml-10 rounded-l-full font-bold p-4 block my-2 text-white hover:bg-white hover:text-black duration-100">
                 <a href="/" class="m-auto font-bold">Chiqish><i class='bx bx-log-out ms-20'></i></a></div>
     </div>
 </template>

@@ -5,6 +5,17 @@ import { toast } from "vue3-toastify";
 
 const modal = ref(false);
 const toggleModal = () => (modal.value = !modal.value);
+const buttonName = ref("Qo'shish");
+
+const addsTeacher = (index)=>{
+    toggleModal();
+    buttonName.value = "Qo'shish"
+}
+
+const updateTeacher = (index)=>{
+    toggleModal();
+    buttonName.value = "Yangilash"
+}
 
 const teachers = reactive({
   first_name: "",
@@ -55,16 +66,16 @@ const addTeacher = () => {
     <div class="w-[300px] pr-4">
       <header>
           <nav class="flex justify-between w-full items-center ">
-              <a href="#"><i class='bx bx-bell text-gray-500 text-3xl'></i></a>
+              <a href="#"><i class='bx bx-bell text-black text-3xl'></i></a>
               <div class="relative">
                 <svg class="h-3 w-3" viewBox="0 0 24 24">
                 </svg>
                   <span class="absolute right-6 bottom-4 h-2 w-2 bg-blue-500 rounded-full"></span>
               </div>
-            <a href="#"><i class='bx bx-cog text-gray-500 text-3xl mr-2'></i></a>
+            <a href="#"><i class='bx bx-cog text-black text-3xl mr-2'></i></a>
             <div>
               <h1 class="text-center font-bold">Ochilov. M</h1>
-              <p class="text-center font-bold text-gray-500 text-[12px]">Admin</p>
+              <p class="text-center font-bold text-black text-[12px]">Admin</p>
             </div>
             <div class="w-[45px]">
                 <img src="https://yt3.googleusercontent.com/ytc/AGIKgqO9gjC2hcodaRbMJtA3xIENtE-Bp1Q9OfD9VrQe=s900-c-k-c0x00ffffff-no-rj" alt="Ochilov. M" class="rounded-full">
@@ -79,7 +90,7 @@ const addTeacher = () => {
       <header>
           <nav class="flex justify-between w-full items-center pe-4">
             <div class="flex w-[170px] relative ml-10 mt-5 ">
-              <i class='bx bx-search-alt-2 text-2xl mt-1 ml-2 absolute text-gray-400 '></i>
+              <i class='bx bx-search-alt-2 text-2xl mt-1 ml-2 absolute text-black '></i>
               <input type="text" class="pl-10 p-2 rounded-full" placeholder="Qidiruv">
           </div>
           </nav>
@@ -88,7 +99,7 @@ const addTeacher = () => {
     <div class="w-[300px] pr-4">
       <header>
           <nav class="flex justify-between w-full items-end ">
-              <button @click="toggleModal" class="bg-indigo-800 w-[200px] ml-24 pb-2 rounded-3xl text-white font-bold text-3xl hover:bg-violet-900 focus:ring-4 ring-2">+</button>
+              <button @click="addsTeacher" class="bg-indigo-800 w-[200px] ml-24 pb-2 rounded-3xl text-white font-bold text-3xl hover:bg-violet-900 focus:ring-4 ring-2">+</button>
           </nav>
         </header>
       </div>
@@ -134,7 +145,7 @@ const addTeacher = () => {
             <div class="mb-3">
               <label
                 for="first_name"
-                class="block mb-2 text-xl font-medium text-gray-500"
+                class="block mb-2 text-xl font-medium text-black"
                 >Ism <span class="text-red-600">*</span></label>
               <input
                 v-model="teachers.first_name"
@@ -149,7 +160,7 @@ const addTeacher = () => {
             <div>
               <label
                 for="last_name"
-                class="block mb-2 text-xl font-medium text-gray-500"
+                class="block mb-2 text-xl font-medium text-black"
                 >Familiyasi <span class="text-red-600">*</span></label>
                 <input
                 v-model="teachers.last_name"
@@ -163,7 +174,7 @@ const addTeacher = () => {
             </div>
             <div class="mb-3">
               <label for="login"
-              class="block mb-2 text-xl font-medium text-gray-500"
+              class="block mb-2 text-xl font-medium text-black"
                 >Login <span class="text-red-600">*</span></label>
                 <input
                 v-model="teachers.login"
@@ -178,7 +189,7 @@ const addTeacher = () => {
             <div>
               <label
                 for="password"
-                class="block mb-2 text-xl font-medium text-gray-500"
+                class="block mb-2 text-xl font-medium text-black"
                 >Parol <span class="text-red-600">*</span></label>
               <input
                 v-model="teachers.password"
@@ -192,7 +203,7 @@ const addTeacher = () => {
             </div>
             <div class="mb-3">
               <label for="info" 
-              class="block mb-2 text-xl font-medium text-gray-500"
+              class="block mb-2 text-xl font-medium text-black"
                 >Ma`lumot <span class="text-red-600">*</span></label>
               <textarea
                 v-model="teachers.info"
@@ -203,45 +214,33 @@ const addTeacher = () => {
                 required=""
               ></textarea>
             </div>
-            <div>
-              <label for="image" class="block mb-2 text-xl font-medium text-gray-500"
-              >Rasm <span class="text-red-600">*</span></label>
-              <input
-              type="text"
-              name="image"
-              id="image"
-              class="bg-gray-200 border border-dashed text-[#A098AE] text-sm rounded-xl ml-4 w-[100px] h-[100px] p-7"
-              placeholder=" Rasm"
-              required=""
-            />
-            </div>
+            <div class="flex items-start justify-center w-[50%] col-span-1 row-span-1 mt-6">
+              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-36 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-white hover:bg-gray-100">
+                  <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                      <svg aria-hidden="true" class="w-10 h-10 mb-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                      <p class="mb-2 text-[10px] text-black text-center"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                      <p class="text-xs text-black text-center">SVG, PNG, JPG</p>
+                  </div>
+                  <input id="dropzone-file" type="file" class="hidden" />
+              </label>
+          </div>
 
-            <div class="mb-3">
-              <label
-                for="birthday"
-                class="block mb-2 text-xl font-medium text-gray-500"
-                >Tug'ilgan sanasi <span class="text-red-600">*</span></label>
-              <input
-                v-model="teachers.birthday"
-                type="text"
-                name="birthday"
-                id="birthday"
-                class="border border-gray-400 text-[#A098AE] text-sm rounded-xl block w-[350px] h-[40px] p-2.5"
-                placeholder="24 Februari 1997"
-                required=""
-              />
-            </div>
-
-            <div>
-              <label for="group" class="block mb-2 text-xl font-medium text-gray-500"
+          <div >
+            <label for="group" class="block mb-2 text-xl font-medium text-black"
               >Guruhni tanlang <span class="text-red-600">*</span></label>
+            <input v-model="teachers.birthday" type="date" name="brand" id="brand" class="flex w-[80%] text-sm text-black rounded-md border border-gray-300 cursor-pointer dark:text-black focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" placeholder="username" required="">
+        </div>
+
+            <div>
+              <label for="group" class="block mb-2 text-xl font-medium text-black"
+              >Fan nomi<span class="text-red-600">*</span></label>
               <input
                 v-model="teachers.group"
                 type="text"
                 name="group"
                 id="group"
                 class="border border-gray-400 text-[#A098AE] text-sm rounded-xl block w-[350px] h-[40px] p-2.5"
-                placeholder="Guruhni tanlang"
+                placeholder="Fan nomi"
                 required=""
               />
             </div>
@@ -250,7 +249,7 @@ const addTeacher = () => {
             <p class="text-end mr-10"><button
               type="submit"
               class="py-3 w-[100px]  text-white bg-indigo-800 font-bold hover:bg-blue-900  focus:ring-4 focus:ring-blue-300 rounded-full">
-              Qo'shish
+              {{ buttonName }}
             </button></p>
           </div>
         </form>
@@ -267,18 +266,18 @@ const addTeacher = () => {
     <div class="flex flex-wrap gap-4 justify-beetwen items-center">
       <div v-for="(el, i) in store.LIST" :key="i" class="w-[250px] h-[350px] shadow-lg bg-[#FFFFFF] rounded-[20px]">
         <div class="text-end pr-5">
-        <a  href="#" class="text-gray-500 inline-block text-2xl rounded-full px-1 mt-2  hover:bg-indigo-800 hover:text-white">
+        <a @click="updateTeacher(i)" href="#" class="text-black inline-block text-2xl rounded-full px-1 mt-2  hover:bg-indigo-800 hover:text-white">
           <i class="bx bx-dots-horizontal-rounded"></i>
         </a>
       </div>
       <div class="flex justify-center items-center">
         <img class="w-[120px] h-[120px] object-cover justify-center items-center rounded-full" src="https://media.npr.org/assets/img/2019/09/18/freshair2_wide-8d4da2ac591bba71c0901ce4423f08d050558940-s1100-c50.jpg" alt=""/>
       </div>
-        <h1 class="text-gray-600 text-2xl font-bold text-center">
+        <h1 class="text-black text-2xl font-bold text-center">
           {{ el.first_name }} {{ el.last_name }}
         </h1>
-        <p class="text-gray-500 text-[18px] font-bold text-center mt-5">
-          NodeJs and VueJs
+        <p class="text-black text-[18px] font-bold text-center mt-5">
+          {{el.group}}
         </p>
         <div class="flex justify-center gap-6 items-center mt-6">
           <a href="#"
@@ -292,6 +291,13 @@ const addTeacher = () => {
             <i class="bx bx-envelope"></i>
           </a>
         </div>
+        <div class="mt-3 flex justify-end">
+          <button @click="store.REMOVE_TEACHER(el.first_name)"
+                  class="w-[40px] mr-3"
+                >
+                  <i class="bx bx-trash text-red-600 hover:text-blue-900"></i>
+                </button>
+        </div>
       </div>
     </div>
   </section>
@@ -300,23 +306,23 @@ const addTeacher = () => {
         <li>
           <a
             href="#"
-            class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-[8px] border border-gray-300 hover:border-[#4D44B5] hover:text-[#4D44B5] focus:ring-2 focus:ring-blue-300"
+            class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-black bg-white rounded-[8px] border border-gray-300 hover:border-[#4D44B5] hover:text-[#4D44B5] focus:ring-2 focus:ring-blue-300"
           >
             <span class="text-[12px]">avvalgisi</span>
           </a>
         </li>
 
-        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+        <span class="text-sm font-normal text-black dark:text-black">
           Sahifa
-          <span class="font-semibold text-gray-900 dark:text-white text-[12px]">1-10</span>
+          <span class="font-semibold text-black dark:text-white text-[12px]">1-10</span>
           dan
-          <span class="font-semibold text-gray-900 dark:text-white text-[12px]">1000</span>
+          <span class="font-semibold text-black dark:text-white text-[12px]">1000</span>
         </span>
 
         <li>
           <a
             href="#"
-            class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-[8px] border border-gray-300 hover:border-[#4D44B5] hover:text-[#4D44B5] focus:ring-2 focus:ring-blue-300"
+            class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-black bg-white rounded-[8px] border border-gray-300 hover:border-[#4D44B5] hover:text-[#4D44B5] focus:ring-2 focus:ring-blue-300"
           >
             <span class="text-[12px]">keyingisi</span>
           </a>

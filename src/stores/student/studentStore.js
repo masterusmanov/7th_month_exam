@@ -9,17 +9,25 @@ export const studentStore = defineStore('student', () => {
   }
 
 
-  const REMOVE_STUDENT = (id) => {
-    
-    state.list.forEach((el, index)=> {
-        if(el.id == id){
-            state.list.splice(index, 1)
-            return
-        }
-    })
+  const REMOVE_STUDENT = (name) => {
+    for (let i = 0; i < state.list.length; i++){
+      if (state.list[i].first_name === name){
+         state.list.splice(i, 1)
+         console.log(`delete - ${name}`);
+      }
+    }
+    console.log(name);
+  }
+
+  const UPDATE_STUDENT = (name) => {
+    for (let i = 0; i < state.list.length; i++){
+      if (state.list[i].first_name === name){
+         state.list[i] = name
+      }
+    }
   }
   
   const LIST = computed(() => state.list)
 
-  return { LIST, ADD, REMOVE_STUDENT }
+  return { LIST, ADD, REMOVE_STUDENT, UPDATE_STUDENT }
 })
