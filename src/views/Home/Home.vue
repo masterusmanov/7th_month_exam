@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="w-1/1">
                                     <h1 class="text-black font-bold">O'quvchilar</h1>
-                                    <h1 class="text-3xl font-bold">{{stores.LIST.length}}</h1>
+                                    <h1 class="text-3xl font-bold">{{stores.LIST.length + 5}}</h1>
                                 </div>
                               </div>                              
                         </div>
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="w-1/1">
                                     <h1 class="text-black font-bold">O'qituvchilar</h1>
-                                    <h1 class="text-3xl font-bold">{{stories.LIST.length}}</h1>
+                                    <h1 class="text-3xl font-bold">{{stories.LIST.length + 5}}</h1>
                                 </div>
                               </div>                              
                         </div>
