@@ -13,9 +13,6 @@
         </div> -->
 
         <div class="list mt-10">
-            <a href="/" id="links" class="ml-2 text-2xl rounded-l-full list__item font-bold p-4 block my-2 text-yellow-500 hover:bg-white hover:text-balck duration-100">
-              <i class="bx bx-home ml-5 text-2xl"></i> <span class="ms-3 font-bold">Dashboard</span>
-            </a>
             <router-link
               class=" ml-2 rounded-l-full text-lg font-bold p-4 block my-2 text-white hover:bg-white hover:text-black duration-100"
               v-for="el in DashboardLinks" :key="el.id"
@@ -30,7 +27,7 @@
 </template>
 
 <style scoped>
-    .router-link-active {
+    .router-link-exact-active {
         background-color: rgb(251, 250, 252);
         color: black;
     }

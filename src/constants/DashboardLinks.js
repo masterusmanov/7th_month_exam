@@ -1,5 +1,11 @@
 export const DashboardLinks = [
     {
+        id: 1,
+        title: "Dashboard",
+        link: "/",
+        icon: "bx bxs-user-account"
+    },
+    {
         id: 2,
         title: "O'quvchilar",
         link: "/students",
