@@ -272,7 +272,7 @@ const addTeacher = () => {
         </a>
       </div>
       <div class="flex justify-center items-center">
-        <img class="w-[120px] h-[120px] object-cover justify-center items-center rounded-full" :src="el.image" alt=""/>
+        <img class="w-[120px] h-[120px] object-cover justify-center items-center rounded-full" src="https://media.npr.org/assets/img/2019/09/18/freshair2_wide-8d4da2ac591bba71c0901ce4423f08d050558940-s1100-c50.jpg" alt=""/>
       </div>
         <h1 class="text-gray-600 text-2xl font-bold text-center">
           {{ el.first_name }} {{ el.last_name }}

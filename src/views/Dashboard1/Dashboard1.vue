@@ -231,7 +231,7 @@
                   </div>
               </section>
               <section class="mt-10 ml-5">
-                    <div class="flex justify-center items-center mt-5" v-for="el in NavLinks">
+                    <div class="flex justify-center items-center mt-5" v-for="el in NavLinks" :key="el.id">
                         <div class="w-1/4 ">
                             <img :src="el.img" alt="Dastur injinering" class="w-[50px] h-[50px] object-cover rounded-full">
                         </div>
@@ -248,7 +248,7 @@
                     </div>
               </section>
               <section class="mt-10 ml-5">
-                <div class="flex justify-center items-center mt-5 border-b-2 border-gray-500" v-for="el in NewLinks">
+                <div class="flex justify-center items-center mt-5 border-b-2 border-gray-500" v-for="el in NewLinks" :key="el.id">
                     <div class="w-1/4 ">
                         <img :src="el.img" alt="Dastur injinering" class="w-[45px] h-[45px] object-cover rounded-full">
                     </div>
