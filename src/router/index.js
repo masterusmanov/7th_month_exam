@@ -10,14 +10,14 @@ const router = createRouter({
       component: Dashboard,
       children: [
         {
-          path: '/dashboard1',
-          name: 'dashboard1',
-          component: () => import ('../views/Dashboard1/Dashboard1.vue'),
+          path: '/',
+          name: 'home',
+          component: () => import('../views/Home/Home.vue')
         },
         {
           path: '/students',
           name: 'students',
-          component: () => import ('../views/Students/Students.vue'),
+          component: () => import('../views/Students/Students.vue')
         },
         {
           path: '/teachers',
